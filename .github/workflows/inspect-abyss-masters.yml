@@ -1,0 +1,31 @@
+name: Inspect ABYSS Factory Masters
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/inspect-abyss-masters.yml']
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract and inventory factory artwork
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/factory master-inspection
+          mkdir -p /tmp/factory master-inspection
+          unzip -q G_STERLING_PRESS_COLLECTION_FACTORY_V1_SOURCE.zip -d /tmp/factory
+          find /tmp/factory -type f \( -iname '*abyss*.png' -o -iname '*abyss*.jpg' -o -iname '*abyss*.jpeg' \) -print0 | while IFS= read -r -d '' f; do
+            echo "---- $f"
+            file "$f"
+            sha256sum "$f"
+            cp "$f" "master-inspection/$(basename "$(dirname "$f")")_$(basename "$f")"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ABYSS_FACTORY_MASTER_INSPECTION
+          path: master-inspection/
+          if-no-files-found: error
