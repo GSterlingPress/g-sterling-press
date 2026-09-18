@@ -1,0 +1,55 @@
+package com.gsterling.press;
+
+import android.app.AppWidgetManager;
+import android.app.WallpaperManager;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.app.Activity;
+
+public class MainActivity extends Activity {
+  TextView status, detail; Button protectedStep, finish;
+  @Override protected void onCreate(Bundle state) {
+    super.onCreate(state); setContentView(R.layout.activity_main);
+    status=findViewById(R.id.status); detail=findViewById(R.id.detail);
+    protectedStep=findViewById(R.id.continueProtected); finish=findViewById(R.id.finish);
+    findViewById(R.id.installTheme).setOnClickListener(v -> install());
+    protectedStep.setOnClickListener(v -> openSamsung()); finish.setOnClickListener(v -> home());
+  }
+  private void install() {
+    try {
+      status.setText("INSTALLING ABYSS…"); detail.setText("Applying approved Home + Lock masters.");
+      WallpaperManager wm=WallpaperManager.getInstance(this);
+      apply(wm,R.drawable.abyss_001_home_clockfree,WallpaperManager.FLAG_SYSTEM);
+      apply(wm,R.drawable.abyss_001_lock_clockfree,WallpaperManager.FLAG_LOCK);
+      getPreferences(MODE_PRIVATE).edit().putBoolean("abyss_wallpapers",true).apply();
+      requestLiveLayer();
+      status.setText("ABYSS CORE INSTALLED ✓");
+      detail.setText("Artwork is installed. Samsung requires confirmation for protected icon/lock-screen operations.");
+      protectedStep.setVisibility(View.VISIBLE); finish.setVisibility(View.VISIBLE);
+    } catch(Exception e) {
+      status.setText("INSTALLATION NEEDS ATTENTION");
+      detail.setText(e.getMessage()==null?"ABYSS could not be fully applied.":e.getMessage());
+    }
+  }
+  private void apply(WallpaperManager wm,int id,int flag) throws Exception {
+    Bitmap b=BitmapFactory.decodeResource(getResources(),id);
+    if(b==null) throw new IllegalStateException("Approved ABYSS artwork is missing.");
+    wm.setBitmap(b,null,true,flag); b.recycle();
+  }
+  private void requestLiveLayer() {
+    try { AppWidgetManager m=getSystemService(AppWidgetManager.class); ComponentName p=new ComponentName(this,ClockDateWidget.class); if(m.isRequestPinAppWidgetSupported()) m.requestPinAppWidget(p,null,null); } catch(Exception ignored) {}
+  }
+  private void openSamsung() {
+    String[] pkgs={"com.samsung.android.themedesigner","com.samsung.android.goodlock"};
+    for(String p:pkgs){ Intent i=getPackageManager().getLaunchIntentForPackage(p); if(i!=null){startActivity(i);return;} }
+    Toast.makeText(this,"Samsung Theme Park/Good Lock is needed for the protected finishing step.",Toast.LENGTH_LONG).show();
+  }
+  private void home(){Intent i=new Intent(Intent.ACTION_MAIN);i.addCategory(Intent.CATEGORY_HOME);i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);startActivity(i);}
+}
