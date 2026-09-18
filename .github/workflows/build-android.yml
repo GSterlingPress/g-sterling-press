@@ -3,7 +3,6 @@ name: Build G Sterling Press APK
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -11,32 +10,35 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-          cache: gradle
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Verify authoritative V1
-        shell: bash
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - uses: android-actions/setup-android@v3
+
+      - name: Verify ABYSS 001 acceptance inputs
         run: |
-          test -f settings.gradle || { echo "Android source not staged yet"; exit 1; }
-          ! grep -R "IMPORT .GSTHEME" app/src/main || { echo "Deprecated importer leaked into runtime"; exit 1; }
+          test -f settings.gradle
           test -f app/src/main/assets/collection_001_abyss.json
-      - name: Build APK
-        run: |
-          chmod +x gradlew
-          ./gradlew clean assembleDebug --stacktrace
-      - name: Name phone-test APK
+          ! grep -R "IMPORT .GSTHEME" app/src/main
+          test -f app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
+          test -f app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
+          grep -q "R.drawable.abyss_001_home_clockfree" app/src/main/java/com/gsterling/press/MainActivity.java
+          grep -q "R.drawable.abyss_001_lock_clockfree" app/src/main/java/com/gsterling/press/MainActivity.java
+
+      - name: Build phone-test APK
+        run: gradle clean assembleDebug --stacktrace
+
+      - name: Name APK
         run: |
           mkdir -p phone-test
           cp app/build/outputs/apk/debug/app-debug.apk phone-test/G_STERLING_PRESS_ONE_TAP_V1.apk
-      - name: Upload phone-test APK
-        uses: actions/upload-artifact@v4
+
+      - uses: actions/upload-artifact@v4
         with:
           name: G_STERLING_PRESS_ONE_TAP_V1
           path: phone-test/G_STERLING_PRESS_ONE_TAP_V1.apk
