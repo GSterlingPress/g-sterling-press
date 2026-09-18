@@ -1,11 +1,14 @@
 package com.gsterling.press;
 
-import android.appwidget.AppWidgetManager;
 import android.app.WallpaperManager;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.util.DisplayMetrics;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +32,6 @@ public class MainActivity extends Activity {
       apply(wm,R.drawable.abyss_001_home_clockfree,WallpaperManager.FLAG_SYSTEM);
       apply(wm,R.drawable.abyss_001_lock_clockfree,WallpaperManager.FLAG_LOCK);
       getPreferences(MODE_PRIVATE).edit().putBoolean("abyss_wallpapers",true).apply();
-      requestLiveLayer();
       status.setText("ABYSS CORE INSTALLED ✓");
       detail.setText("Artwork is installed. Samsung requires confirmation for protected icon/lock-screen operations.");
       protectedStep.setVisibility(View.VISIBLE); finish.setVisibility(View.VISIBLE);
@@ -39,12 +41,20 @@ public class MainActivity extends Activity {
     }
   }
   private void apply(WallpaperManager wm,int id,int flag) throws Exception {
-    Bitmap b=BitmapFactory.decodeResource(getResources(),id);
-    if(b==null) throw new IllegalStateException("Approved ABYSS artwork is missing.");
-    wm.setBitmap(b,null,true,flag); b.recycle();
-  }
-  private void requestLiveLayer() {
-    try { AppWidgetManager m=getSystemService(AppWidgetManager.class); ComponentName p=new ComponentName(this,ClockDateWidget.class); if(m.isRequestPinAppWidgetSupported()) m.requestPinAppWidget(p,null,null); } catch(Exception ignored) {}
+    Bitmap source=BitmapFactory.decodeResource(getResources(),id);
+    if(source==null) throw new IllegalStateException("Approved ABYSS artwork is missing.");
+    DisplayMetrics dm=getResources().getDisplayMetrics();
+    int targetW=dm.widthPixels, targetH=dm.heightPixels;
+    float scale=Math.max((float)targetW/source.getWidth(),(float)targetH/source.getHeight());
+    int scaledW=Math.round(source.getWidth()*scale), scaledH=Math.round(source.getHeight()*scale);
+    Bitmap scaled=Bitmap.createScaledBitmap(source,scaledW,scaledH,true);
+    int left=Math.max(0,(scaledW-targetW)/2), top=Math.max(0,(scaledH-targetH)/2);
+    Bitmap phone=Bitmap.createBitmap(scaled,left,top,Math.min(targetW,scaledW-left),Math.min(targetH,scaledH-top));
+    wm.suggestDesiredDimensions(targetW,targetH);
+    wm.setBitmap(phone,null,false,flag);
+    if(phone!=scaled) phone.recycle();
+    if(scaled!=source) scaled.recycle();
+    source.recycle();
   }
   private void openSamsung() {
     String[] pkgs={"com.samsung.android.themedesigner","com.samsung.android.goodlock"};
