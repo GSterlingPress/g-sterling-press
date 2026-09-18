@@ -20,6 +20,33 @@ jobs:
           gradle-version: '8.9'
       - uses: android-actions/setup-android@v3
 
+      - name: Recover locked ABYSS masters from authoritative factory ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP="G_STERLING_PRESS_COLLECTION_FACTORY_V1_SOURCE.zip"
+          test -f "$ZIP"
+          rm -rf /tmp/gsp_factory && mkdir -p /tmp/gsp_factory
+          unzip -q "$ZIP" -d /tmp/gsp_factory
+          echo "Factory artwork candidates:"
+          find /tmp/gsp_factory -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) -printf '%p %s bytes\n'
+          HOME_SRC="$(find /tmp/gsp_factory -type f -iname 'abyss_001_home_clockfree.png' -print -quit)"
+          LOCK_SRC="$(find /tmp/gsp_factory -type f -iname 'abyss_001_lock_clockfree.png' -print -quit)"
+          if [ -z "$HOME_SRC" ]; then
+            HOME_SRC="$(find /tmp/gsp_factory -type f \( -iname '*abyss*home*.png' -o -iname '*home*clockfree*.png' \) -print -quit)"
+          fi
+          if [ -z "$LOCK_SRC" ]; then
+            LOCK_SRC="$(find /tmp/gsp_factory -type f \( -iname '*abyss*lock*.png' -o -iname '*lock*clockfree*.png' \) -print -quit)"
+          fi
+          test -n "$HOME_SRC" || { echo "LOCKED HOME MASTER NOT FOUND"; exit 31; }
+          test -n "$LOCK_SRC" || { echo "LOCKED LOCK MASTER NOT FOUND"; exit 32; }
+          mkdir -p app/src/main/res/drawable-nodpi
+          cp "$HOME_SRC" app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
+          cp "$LOCK_SRC" app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
+          test -s app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
+          test -s app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
+          sha256sum app/src/main/res/drawable-nodpi/abyss_001_*_clockfree.png
+
       - name: Verify ABYSS 001 acceptance inputs
         run: |
           test -f settings.gradle
@@ -37,6 +64,7 @@ jobs:
         run: |
           mkdir -p phone-test
           cp app/build/outputs/apk/debug/app-debug.apk phone-test/G_STERLING_PRESS_ONE_TAP_V1.apk
+          sha256sum phone-test/G_STERLING_PRESS_ONE_TAP_V1.apk
 
       - uses: actions/upload-artifact@v4
         with:
