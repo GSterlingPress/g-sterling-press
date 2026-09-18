@@ -36,10 +36,10 @@ jobs:
           unzip -q "$ZIP" -d /tmp/gsp_factory
           echo "Factory artwork candidates:"
           find /tmp/gsp_factory -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) -printf '%p %s bytes\n'
-          HOME_SRC="$(find /tmp/gsp_factory -type f -iname 'abyss_001_home_clockfree.png' -print -quit)"
+          HOME_SRC="$(find /tmp/gsp_factory -type f -path '*/drawable-nodpi/abyss_001_home_clockfree.png' -print -quit)"
           LOCK_SRC="$(find /tmp/gsp_factory -type f -iname 'abyss_001_lock_clockfree.png' -print -quit)"
           if [ -z "$HOME_SRC" ]; then
-            HOME_SRC="$(find /tmp/gsp_factory -type f \( -iname '*abyss*home*.png' -o -iname '*home*clockfree*.png' \) -print -quit)"
+            echo "AUTHORITATIVE NODPI HOME MASTER NOT FOUND"; exit 30
           fi
           if [ -z "$LOCK_SRC" ]; then
             LOCK_SRC="$(find /tmp/gsp_factory -type f \( -iname '*abyss*lock*.png' -o -iname '*lock*clockfree*.png' \) -print -quit)"
@@ -51,6 +51,7 @@ jobs:
           cp "$LOCK_SRC" app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
           test -s app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
           test -s app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
+          echo "0360746c4f496a73a7087a7cfb749562830888f3c9f30164aa0bad8cfe01d79e  app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png" | sha256sum -c -
           sha256sum app/src/main/res/drawable-nodpi/abyss_001_*_clockfree.png
 
       - name: Verify ABYSS 001 acceptance inputs
@@ -71,11 +72,11 @@ jobs:
       - name: Name APK
         run: |
           mkdir -p phone-test
-          cp app/build/outputs/apk/debug/app-debug.apk phone-test/G_STERLING_PRESS_ABYSS_PHONE_FIX_V2.apk
-          sha256sum phone-test/G_STERLING_PRESS_ABYSS_PHONE_FIX_V2.apk
+          cp app/build/outputs/apk/debug/app-debug.apk phone-test/G_STERLING_PRESS_ABYSS_V3.apk
+          sha256sum phone-test/G_STERLING_PRESS_ABYSS_V3.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: G_STERLING_PRESS_ABYSS_PHONE_FIX_V2
-          path: phone-test/G_STERLING_PRESS_ABYSS_PHONE_FIX_V2.apk
+          name: G_STERLING_PRESS_ABYSS_V3
+          path: phone-test/G_STERLING_PRESS_ABYSS_V3.apk
           if-no-files-found: error
