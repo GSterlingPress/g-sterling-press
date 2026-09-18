@@ -36,6 +36,11 @@ jobs:
           unzip -q "$ZIP" -d /tmp/gsp_factory
           echo "Factory artwork candidates:"
           find /tmp/gsp_factory -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) -printf '%p %s bytes\n'
+          echo "MASTER COMPARISON:"
+          while IFS= read -r img; do
+            file "$img"
+            sha256sum "$img"
+          done < <(find /tmp/gsp_factory -type f \( -iname '*abyss*.png' -o -iname '*clockfree*.png' \) | sort)
           HOME_SRC="$(find /tmp/gsp_factory -type f -path '*/drawable-nodpi/abyss_001_home_clockfree.png' -print -quit)"
           LOCK_SRC="$(find /tmp/gsp_factory -type f -iname 'abyss_001_lock_clockfree.png' -print -quit)"
           if [ -z "$HOME_SRC" ]; then
