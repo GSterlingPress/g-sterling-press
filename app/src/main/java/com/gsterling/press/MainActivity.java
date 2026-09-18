@@ -1,6 +1,6 @@
 package com.gsterling.press;
 
-import android.app.AppWidgetManager;
+import android.appwidget.AppWidgetManager;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
 import android.content.Intent;
