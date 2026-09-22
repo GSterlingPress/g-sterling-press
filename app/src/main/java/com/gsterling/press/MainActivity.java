@@ -1,65 +1,13 @@
 package com.gsterling.press;
-
-import android.app.WallpaperManager;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.DisplayMetrics;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.app.Activity;
-
-public class MainActivity extends Activity {
-  TextView status, detail; Button protectedStep, finish;
-  @Override protected void onCreate(Bundle state) {
-    super.onCreate(state); setContentView(R.layout.activity_main);
-    status=findViewById(R.id.status); detail=findViewById(R.id.detail);
-    protectedStep=findViewById(R.id.continueProtected); finish=findViewById(R.id.finish);
-    findViewById(R.id.installTheme).setOnClickListener(v -> install());
-    protectedStep.setOnClickListener(v -> openSamsung()); finish.setOnClickListener(v -> home());
-  }
-  private void install() {
-    try {
-      status.setText("INSTALLING ABYSS…"); detail.setText("Applying approved Home + Lock masters.");
-      WallpaperManager wm=WallpaperManager.getInstance(this);
-      apply(wm,R.drawable.abyss_001_home_clockfree,WallpaperManager.FLAG_SYSTEM);
-      apply(wm,R.drawable.abyss_001_lock_clockfree,WallpaperManager.FLAG_LOCK);
-      getPreferences(MODE_PRIVATE).edit().putBoolean("abyss_wallpapers",true).apply();
-      status.setText("ABYSS CORE INSTALLED ✓");
-      detail.setText("Artwork is installed. Samsung requires confirmation for protected icon/lock-screen operations.");
-      protectedStep.setVisibility(View.VISIBLE); finish.setVisibility(View.VISIBLE);
-    } catch(Exception e) {
-      status.setText("INSTALLATION NEEDS ATTENTION");
-      detail.setText(e.getMessage()==null?"ABYSS could not be fully applied.":e.getMessage());
-    }
-  }
-  private void apply(WallpaperManager wm,int id,int flag) throws Exception {
-    Bitmap source=BitmapFactory.decodeResource(getResources(),id);
-    if(source==null) throw new IllegalStateException("Approved ABYSS artwork is missing.");
-    DisplayMetrics dm=getResources().getDisplayMetrics();
-    int targetW=dm.widthPixels, targetH=dm.heightPixels;
-    float scale=Math.max((float)targetW/source.getWidth(),(float)targetH/source.getHeight());
-    int scaledW=Math.round(source.getWidth()*scale), scaledH=Math.round(source.getHeight()*scale);
-    Bitmap scaled=Bitmap.createScaledBitmap(source,scaledW,scaledH,true);
-    int left=Math.max(0,(scaledW-targetW)/2), top=Math.max(0,(scaledH-targetH)/2);
-    Bitmap phone=Bitmap.createBitmap(scaled,left,top,Math.min(targetW,scaledW-left),Math.min(targetH,scaledH-top));
-    wm.suggestDesiredDimensions(targetW,targetH);
-    wm.setBitmap(phone,null,false,flag);
-    if(phone!=scaled) phone.recycle();
-    if(scaled!=source) scaled.recycle();
-    source.recycle();
-  }
-  private void openSamsung() {
-    String[] pkgs={"com.samsung.android.themedesigner","com.samsung.android.goodlock"};
-    for(String p:pkgs){ Intent i=getPackageManager().getLaunchIntentForPackage(p); if(i!=null){startActivity(i);return;} }
-    Toast.makeText(this,"Samsung Theme Park/Good Lock is needed for the protected finishing step.",Toast.LENGTH_LONG).show();
-  }
-  private void home(){Intent i=new Intent(Intent.ACTION_MAIN);i.addCategory(Intent.CATEGORY_HOME);i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);startActivity(i);}
+import android.app.*;import android.content.*;import android.graphics.*;import android.os.*;import android.util.DisplayMetrics;import android.view.View;import android.widget.*;
+import java.util.*;
+public class MainActivity extends Activity{
+ TextView status,detail,current; Switch rotation; Button next;
+ static final String[] N={"THE PURSUIT","INTO THE STORM","CANNON FIRE","THE GHOST FLEET","HIDDEN COVE","IN PORT","A NEW HORIZON"};
+ @Override public void onCreate(Bundle b){super.onCreate(b);setContentView(R.layout.activity_main);status=findViewById(R.id.status);detail=findViewById(R.id.detail);current=findViewById(R.id.current);rotation=findViewById(R.id.rotation);next=findViewById(R.id.nextScene);rotation.setChecked(Prefs.rotation(this));show();findViewById(R.id.installTheme).setOnClickListener(v->install());next.setOnClickListener(v->advance());rotation.setOnCheckedChangeListener((x,on)->{Prefs.setRotation(this,on);Scheduler.schedule(this,on?Scheduler.Mode.DAILY:Scheduler.Mode.OFF);show();});findViewById(R.id.testRotation).setOnClickListener(v->{Prefs.setRotation(this,true);rotation.setChecked(true);Scheduler.schedule(this,Scheduler.Mode.TEST);Toast.makeText(this,"Test rotation armed for 5 minutes.",Toast.LENGTH_LONG).show();});}
+ void install(){try{applyScene(this,Prefs.index(this));Prefs.setRotation(this,true);rotation.setChecked(true);Scheduler.schedule(this,Scheduler.Mode.DAILY);status.setText("BLACK TIDE INSTALLED ✓");detail.setText("Daily voyage armed for approximately 4:00 AM.");show();}catch(Exception e){status.setText("INSTALLATION NEEDS ATTENTION");detail.setText(String.valueOf(e.getMessage()));}}
+ void advance(){int i=(Prefs.index(this)+1)%N.length;Prefs.setIndex(this,i);try{applyScene(this,i);show();}catch(Exception e){Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();}}
+ void show(){current.setText("CURRENT CHAPTER · DAY "+(Prefs.index(this)+1)+"\n"+N[Prefs.index(this)]);detail.setText(Prefs.rotation(this)?"Daily Rotation ON · approximately 4:00 AM":"Daily Rotation OFF");}
+ static void applyScene(Context c,int i)throws Exception{String[] h={"black_tide_01_home","black_tide_02_home","black_tide_03_home","black_tide_04_home","black_tide_05_home","black_tide_06_home","black_tide_07_home"};String[] l={"black_tide_01_lock","black_tide_02_lock","black_tide_03_lock","black_tide_04_lock","black_tide_05_lock","black_tide_06_lock","black_tide_07_lock"};apply(c,h[i],WallpaperManager.FLAG_SYSTEM);apply(c,l[i],WallpaperManager.FLAG_LOCK);}
+ static void apply(Context c,String n,int flag)throws Exception{int id=c.getResources().getIdentifier(n,"drawable",c.getPackageName());if(id==0)throw new IllegalStateException("BLACK TIDE master missing: "+n);Bitmap s=BitmapFactory.decodeResource(c.getResources(),id);DisplayMetrics dm=c.getResources().getDisplayMetrics();int w=dm.widthPixels,h=dm.heightPixels;float q=Math.max((float)w/s.getWidth(),(float)h/s.getHeight());int sw=Math.round(s.getWidth()*q),sh=Math.round(s.getHeight()*q);Bitmap z=Bitmap.createScaledBitmap(s,sw,sh,true);Bitmap p=Bitmap.createBitmap(z,Math.max(0,(sw-w)/2),Math.max(0,(sh-h)/2),Math.min(w,sw),Math.min(h,sh));WallpaperManager wm=WallpaperManager.getInstance(c);wm.suggestDesiredDimensions(w,h);wm.setBitmap(p,null,false,flag);if(p!=z)p.recycle();if(z!=s)z.recycle();s.recycle();}
 }
