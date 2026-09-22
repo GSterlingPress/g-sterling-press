@@ -1,0 +1,1 @@
+package com.gsterling.press; import android.content.*; public class BootReceiver extends BroadcastReceiver{public void onReceive(Context c,Intent i){if(Prefs.rotation(c))Scheduler.schedule(c,Scheduler.Mode.DAILY);}}
