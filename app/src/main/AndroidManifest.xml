@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+<uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
 <queries><package android:name="com.samsung.android.themedesigner"/><package android:name="com.samsung.android.goodlock"/></queries>
 <application android:allowBackup="true" android:label="G. Sterling Press" android:theme="@style/AppTheme">
 <activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
