@@ -1,0 +1,38 @@
+{
+  "schema": "gsterling.complete-theme.v1",
+  "theme": {
+    "id": "OBSIDIAN_002",
+    "name": "OBSIDIAN",
+    "release": "COMPLETE_V1",
+    "visualAuthority": "locked-approved-board"
+  },
+  "palette": {
+    "obsidian": "#050507",
+    "charcoal": "#17191E",
+    "steel": "#7B808A",
+    "violet": "#6D3DCC",
+    "ice": "#E9EDF4"
+  },
+  "requiredSurfaces": [
+    "home_wallpaper",
+    "lock_wallpaper",
+    "icon_pack",
+    "keyboard",
+    "clock_widget",
+    "quick_panel",
+    "notifications",
+    "samsung_finishing"
+  ],
+  "releaseGate": "SELLABLE only after device acceptance of all required surfaces",
+  "protectedSamsungSurfaces": [
+    "icon_pack",
+    "keyboard",
+    "quick_panel",
+    "notifications"
+  ],
+  "samsungApps": [
+    "Theme Park",
+    "Keys Cafe"
+  ],
+  "notes": "APK installs wallpapers/widget. Protected Samsung surfaces require explicit user confirmation in Samsung tools."
+}
