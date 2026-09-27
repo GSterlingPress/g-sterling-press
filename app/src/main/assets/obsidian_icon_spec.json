@@ -1,0 +1,33 @@
+{
+  "theme": "OBSIDIAN_002",
+  "format": "Samsung Theme Park icon finishing spec",
+  "tray": {
+    "shape": "rounded_square",
+    "base": "#090A0D",
+    "material": "obsidian_glass",
+    "edge": "#6D3DCC",
+    "edgeTreatment": "restrained violet rim glow"
+  },
+  "glyph": {
+    "primary": "#E9EDF4",
+    "secondary": "#7B808A"
+  },
+  "targets": [
+    "Phone",
+    "Messages",
+    "Camera",
+    "Gallery",
+    "Browser",
+    "Mail",
+    "Maps",
+    "Calendar",
+    "Clock",
+    "Settings",
+    "Files",
+    "Wallet",
+    "Weather",
+    "Music",
+    "Notes"
+  ],
+  "fallback": "Apply common tray treatment to all remaining app icons in Theme Park; do not replace third-party trademarks with misleading glyphs."
+}
