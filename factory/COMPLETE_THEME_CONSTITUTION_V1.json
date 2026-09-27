@@ -1,0 +1,33 @@
+{
+  "schema": "gsterling.theme-factory.constitution.v1",
+  "status": "LOCKED",
+  "definition": "A theme is SELLABLE only when the actual device experience is coherent across all required surfaces.",
+  "requiredSurfaces": [
+    "home_wallpaper",
+    "lock_wallpaper",
+    "icon_system",
+    "keyboard",
+    "clock_widget",
+    "quick_panel",
+    "notifications",
+    "samsung_finishing"
+  ],
+  "hardFails": [
+    "mockup_labels_in_wallpaper",
+    "black_unfilled_wallpaper_area",
+    "cropped_required_typography",
+    "stock_mixed_icon_appearance_at_acceptance",
+    "uncoordinated_keyboard_at_acceptance",
+    "missing_widget",
+    "claiming_protected_samsung_surface_was_silently_installed",
+    "unsigned_or_unverified_apk"
+  ],
+  "states": [
+    "GENERATED",
+    "BUILT",
+    "DEVICE_TEST",
+    "COMPLETE",
+    "SELLABLE"
+  ],
+  "rule": "COMPILES != COMPLETE; INSTALLS != COMPLETE; WALLPAPER_WORKS != COMPLETE"
+}
