@@ -1,0 +1,27 @@
+{
+  "theme": "OBSIDIAN_002",
+  "tools": [
+    "Samsung Theme Park",
+    "Keys Cafe"
+  ],
+  "background": "#050507",
+  "keys": {
+    "base": "#17191E",
+    "glyph": "#E9EDF4",
+    "radius": "rounded",
+    "material": "obsidian_glass"
+  },
+  "accent": {
+    "violet": "#6D3DCC",
+    "usage": "pressed/selected edge glow only"
+  },
+  "spacebar": {
+    "motif": "planetary horizon",
+    "treatment": "subtle"
+  },
+  "effects": {
+    "type": "violet ripple/glow",
+    "intensity": "restrained"
+  },
+  "acceptance": "Keyboard must visibly belong to OBSIDIAN; stock Samsung keyboard appearance fails."
+}
