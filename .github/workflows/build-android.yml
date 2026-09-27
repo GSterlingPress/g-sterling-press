@@ -29,8 +29,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test -s app/src/main/res/drawable-nodpi/obsidian_002_home.jpg
-          test -s app/src/main/res/drawable-nodpi/obsidian_002_lock.jpg
+          test -s app/src/main/res/drawable-nodpi/obsidian_002_home.png
+          test -s app/src/main/res/drawable-nodpi/obsidian_002_lock.png
           grep -q "com.gsterling.press.obsidian002" app/build.gradle
           grep -q "R.drawable.obsidian_002_home" app/src/main/java/com/gsterling/press/MainActivity.java
           grep -q "R.drawable.obsidian_002_lock" app/src/main/java/com/gsterling/press/MainActivity.java
