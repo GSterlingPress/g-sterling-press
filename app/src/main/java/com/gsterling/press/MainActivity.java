@@ -46,8 +46,8 @@ public class MainActivity extends Activity {
     Bitmap scaled=Bitmap.createScaledBitmap(source,scaledW,scaledH,true);
     int left=Math.max(0,(scaledW-targetW)/2), top=Math.max(0,(scaledH-targetH)/2);
     Bitmap phone=Bitmap.createBitmap(scaled,left,top,Math.min(targetW,scaledW-left),Math.min(targetH,scaledH-top));
-    wm.suggestDesiredDimensions(targetW,targetH);
-    wm.setBitmap(phone,null,false,flag);
+    wm.setWallpaperOffsetSteps(0f, 0f);
+    wm.setBitmap(phone, new android.graphics.Rect(0,0,targetW,targetH), false, flag);
     if(phone!=scaled) phone.recycle(); if(scaled!=source) scaled.recycle(); source.recycle();
   }
   private void openSamsung() {
