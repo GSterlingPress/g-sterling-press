@@ -1,0 +1,18 @@
+{
+  "theme": "OBSIDIAN_002",
+  "quickPanel": {
+    "background": "#050507",
+    "control": "#17191E",
+    "selected": "#6D3DCC",
+    "primaryText": "#E9EDF4",
+    "secondaryText": "#7B808A"
+  },
+  "notifications": {
+    "card": "#101116",
+    "border": "#4A4D55",
+    "accent": "#6D3DCC",
+    "primaryText": "#E9EDF4",
+    "secondaryText": "#9A9DA6"
+  },
+  "acceptance": "Quick Panel and notifications must visually coordinate with OBSIDIAN after Samsung finishing."
+}
