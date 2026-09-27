@@ -4,10 +4,6 @@ import android.app.WallpaperManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.os.Bundle;
 import android.view.View;
@@ -27,22 +23,22 @@ public class MainActivity extends Activity {
   }
   private void install() {
     try {
-      status.setText("INSTALLING ABYSS…"); detail.setText("Applying approved Home + Lock masters.");
+      status.setText("INSTALLING OBSIDIAN…"); detail.setText("Applying approved Home + Lock masters.");
       WallpaperManager wm=WallpaperManager.getInstance(this);
-      apply(wm,R.drawable.abyss_001_home_clockfree,WallpaperManager.FLAG_SYSTEM);
-      apply(wm,R.drawable.abyss_001_lock_clockfree,WallpaperManager.FLAG_LOCK);
-      getPreferences(MODE_PRIVATE).edit().putBoolean("abyss_wallpapers",true).apply();
-      status.setText("ABYSS CORE INSTALLED ✓");
+      apply(wm,R.drawable.obsidian_002_home,WallpaperManager.FLAG_SYSTEM);
+      apply(wm,R.drawable.obsidian_002_lock,WallpaperManager.FLAG_LOCK);
+      getPreferences(MODE_PRIVATE).edit().putBoolean("obsidian_wallpapers",true).apply();
+      status.setText("OBSIDIAN CORE INSTALLED ✓");
       detail.setText("Artwork is installed. Samsung requires confirmation for protected icon/lock-screen operations.");
       protectedStep.setVisibility(View.VISIBLE); finish.setVisibility(View.VISIBLE);
     } catch(Exception e) {
       status.setText("INSTALLATION NEEDS ATTENTION");
-      detail.setText(e.getMessage()==null?"ABYSS could not be fully applied.":e.getMessage());
+      detail.setText(e.getMessage()==null?"OBSIDIAN could not be fully applied.":e.getMessage());
     }
   }
   private void apply(WallpaperManager wm,int id,int flag) throws Exception {
     Bitmap source=BitmapFactory.decodeResource(getResources(),id);
-    if(source==null) throw new IllegalStateException("Approved ABYSS artwork is missing.");
+    if(source==null) throw new IllegalStateException("Approved OBSIDIAN artwork is missing.");
     DisplayMetrics dm=getResources().getDisplayMetrics();
     int targetW=dm.widthPixels, targetH=dm.heightPixels;
     float scale=Math.max((float)targetW/source.getWidth(),(float)targetH/source.getHeight());
@@ -52,9 +48,7 @@ public class MainActivity extends Activity {
     Bitmap phone=Bitmap.createBitmap(scaled,left,top,Math.min(targetW,scaledW-left),Math.min(targetH,scaledH-top));
     wm.suggestDesiredDimensions(targetW,targetH);
     wm.setBitmap(phone,null,false,flag);
-    if(phone!=scaled) phone.recycle();
-    if(scaled!=source) scaled.recycle();
-    source.recycle();
+    if(phone!=scaled) phone.recycle(); if(scaled!=source) scaled.recycle(); source.recycle();
   }
   private void openSamsung() {
     String[] pkgs={"com.samsung.android.themedesigner","com.samsung.android.goodlock"};

@@ -1,8 +1,8 @@
-name: Build G Sterling Press APK
+name: Build G Sterling Press OBSIDIAN 002 APK
 
 on:
   push:
-    branches: [main]
+    branches: [theme/obsidian-002]
   workflow_dispatch:
 
 jobs:
@@ -18,70 +18,36 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Use preinstalled Android SDK
+      - name: Use Android SDK
         shell: bash
         run: |
           echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> "$GITHUB_ENV"
           echo "/usr/local/lib/android/sdk/platform-tools" >> "$GITHUB_PATH"
           yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null || true
           /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0"
-
-      - name: Recover locked ABYSS masters from authoritative factory ZIP
+      - name: Verify OBSIDIAN inputs
         shell: bash
         run: |
           set -euo pipefail
-          ZIP="G_STERLING_PRESS_COLLECTION_FACTORY_V1_SOURCE.zip"
-          test -f "$ZIP"
-          rm -rf /tmp/gsp_factory && mkdir -p /tmp/gsp_factory
-          unzip -q "$ZIP" -d /tmp/gsp_factory
-          echo "Factory artwork candidates:"
-          find /tmp/gsp_factory -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) -printf '%p %s bytes\n'
-          echo "MASTER COMPARISON:"
-          while IFS= read -r img; do
-            file "$img"
-            sha256sum "$img"
-          done < <(find /tmp/gsp_factory -type f \( -iname '*abyss*.png' -o -iname '*clockfree*.png' \) | sort)
-          HOME_SRC="$(find /tmp/gsp_factory -type f -path '*/drawable-nodpi/abyss_001_home_clockfree.png' -print -quit)"
-          LOCK_SRC="$(find /tmp/gsp_factory -type f -iname 'abyss_001_lock_clockfree.png' -print -quit)"
-          if [ -z "$HOME_SRC" ]; then
-            echo "AUTHORITATIVE NODPI HOME MASTER NOT FOUND"; exit 30
-          fi
-          if [ -z "$LOCK_SRC" ]; then
-            LOCK_SRC="$(find /tmp/gsp_factory -type f \( -iname '*abyss*lock*.png' -o -iname '*lock*clockfree*.png' \) -print -quit)"
-          fi
-          test -n "$HOME_SRC" || { echo "LOCKED HOME MASTER NOT FOUND"; exit 31; }
-          test -n "$LOCK_SRC" || { echo "LOCKED LOCK MASTER NOT FOUND"; exit 32; }
-          mkdir -p app/src/main/res/drawable-nodpi
-          cp "$HOME_SRC" app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
-          cp "$LOCK_SRC" app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
-          test -s app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
-          test -s app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
-          echo "0360746c4f496a73a7087a7cfb749562830888f3c9f30164aa0bad8cfe01d79e  app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png" | sha256sum -c -
-          sha256sum app/src/main/res/drawable-nodpi/abyss_001_*_clockfree.png
-
-      - name: Verify ABYSS 001 acceptance inputs
-        run: |
-          test -f settings.gradle
-          test -f app/src/main/assets/collection_001_abyss.json
-          ! grep -R "IMPORT .GSTHEME" app/src/main
-          test -f app/src/main/res/drawable-nodpi/abyss_001_home_clockfree.png
-          test -f app/src/main/res/drawable-nodpi/abyss_001_lock_clockfree.png
-          grep -q "R.drawable.abyss_001_home_clockfree" app/src/main/java/com/gsterling/press/MainActivity.java
-          grep -q "R.drawable.abyss_001_lock_clockfree" app/src/main/java/com/gsterling/press/MainActivity.java
-          ! grep -q "requestPinAppWidget" app/src/main/java/com/gsterling/press/MainActivity.java
-          grep -q "suggestDesiredDimensions" app/src/main/java/com/gsterling/press/MainActivity.java
-
-      - name: Build phone-test APK
+          test -s app/src/main/res/drawable-nodpi/obsidian_002_home.jpg
+          test -s app/src/main/res/drawable-nodpi/obsidian_002_lock.jpg
+          grep -q "com.gsterling.press.obsidian002" app/build.gradle
+          grep -q "R.drawable.obsidian_002_home" app/src/main/java/com/gsterling/press/MainActivity.java
+          grep -q "R.drawable.obsidian_002_lock" app/src/main/java/com/gsterling/press/MainActivity.java
+      - name: Real Gradle build
         run: gradle clean assembleDebug --stacktrace
-
-      - name: Name APK
+      - name: Validate and name APK
+        shell: bash
         run: |
+          set -euo pipefail
+          APK=app/build/outputs/apk/debug/app-debug.apk
+          test -s "$APK"
+          /usr/local/lib/android/sdk/build-tools/35.0.0/apksigner verify --verbose "$APK"
           mkdir -p phone-test
-          cp app/build/outputs/apk/debug/app-debug.apk phone-test/G_STERLING_PRESS_ABYSS_V3.apk
-          sha256sum phone-test/G_STERLING_PRESS_ABYSS_V3.apk
-
+          cp "$APK" phone-test/G_STERLING_PRESS_OBSIDIAN_002.apk
+          sha256sum phone-test/G_STERLING_PRESS_OBSIDIAN_002.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: G_STERLING_PRESS_ABYSS_V3
-          path: phone-test/G_STERLING_PRESS_ABYSS_V3.apk
+          name: G_STERLING_PRESS_OBSIDIAN_002
+          path: phone-test/G_STERLING_PRESS_OBSIDIAN_002.apk
           if-no-files-found: error
