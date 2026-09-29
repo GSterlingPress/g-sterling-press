@@ -1,0 +1,25 @@
+name: Theme Factory Batch 25
+on:
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: "Theme slug or ALL"
+        required: true
+        default: "ALL"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Validate production queue
+        run: python factory/validate_batch.py
+      - name: Build only themes with complete unique masters
+        run: |
+          python factory/build_batch.py "${{ inputs.theme }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theme-factory-output
+          path: factory/out/
