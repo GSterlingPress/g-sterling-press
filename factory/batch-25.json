@@ -9,15 +9,45 @@
       "slug": "tempest",
       "base": "storm-black",
       "accent": "electric-cyan",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "violent sculptural storm clouds, distant lightning filaments, rain-glass atmosphere",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "004",
@@ -25,15 +55,45 @@
       "slug": "ember",
       "base": "charcoal",
       "accent": "ember-orange",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "black volcanic glass, floating ember sparks, restrained molten seams",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "005",
@@ -41,15 +101,45 @@
       "slug": "arctic",
       "base": "midnight-navy",
       "accent": "ice-blue",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "monumental blue ice canyon, crystalline fog, polar light",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "006",
@@ -57,15 +147,45 @@
       "slug": "neon-rain",
       "base": "black",
       "accent": "magenta-cyan",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "rain-soaked futuristic glass, magenta/cyan reflections, deep black negative space",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "007",
@@ -73,15 +193,45 @@
       "slug": "lunar",
       "base": "graphite",
       "accent": "moon-silver",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "moonlit basalt landscape, silver dust, enormous lunar horizon",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "008",
@@ -89,15 +239,45 @@
       "slug": "redwood",
       "base": "forest-black",
       "accent": "copper",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "towering redwood forest at night, copper mist, monumental trunks",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "009",
@@ -105,15 +285,45 @@
       "slug": "void",
       "base": "near-black",
       "accent": "violet",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "near-black cosmic abyss, restrained violet gravitational glow",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "010",
@@ -121,15 +331,45 @@
       "slug": "moon-tide",
       "base": "deep-navy",
       "accent": "pearl-blue",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "dark ocean under oversized moon, pearl-blue surf and mist",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "011",
@@ -137,15 +377,45 @@
       "slug": "event-horizon",
       "base": "black",
       "accent": "solar-gold",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "black accretion disk, elegant solar-gold gravitational ring",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "012",
@@ -153,15 +423,45 @@
       "slug": "aeon",
       "base": "obsidian-blue",
       "accent": "white",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "ancient dark megastructure, white-blue timeless energy lines",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "013",
@@ -169,15 +469,45 @@
       "slug": "carbon",
       "base": "carbon-black",
       "accent": "steel",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "macro carbon weave and machined black metal, precision steel highlights",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "014",
@@ -185,15 +515,45 @@
       "slug": "aurora",
       "base": "night-blue",
       "accent": "aurora-green",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "dark polar mountains, green aurora ribbons, deep blue night",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "015",
@@ -201,15 +561,45 @@
       "slug": "eclipse",
       "base": "black",
       "accent": "corona-gold",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "total solar eclipse, black disk, razor-thin gold corona",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "016",
@@ -217,15 +607,45 @@
       "slug": "glacier",
       "base": "slate",
       "accent": "frost",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "monolithic slate glacier walls, frost haze, pale blue fissures",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "017",
@@ -233,15 +653,45 @@
       "slug": "inferno",
       "base": "black",
       "accent": "red-orange",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "blackened volcanic terrain, restrained red-orange lava light",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "018",
@@ -249,15 +699,45 @@
       "slug": "midnight",
       "base": "ink",
       "accent": "indigo",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "minimal ink-black city geometry, deep indigo atmospheric light",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "019",
@@ -265,15 +745,45 @@
       "slug": "phantom",
       "base": "graphite",
       "accent": "ghost-white",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "graphite fog architecture, ghost-white translucent light forms",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "020",
@@ -281,15 +791,45 @@
       "slug": "solstice",
       "base": "navy",
       "accent": "warm-gold",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "dark winter horizon, low warm-gold sun, long monumental shadows",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "021",
@@ -297,15 +837,45 @@
       "slug": "titanium",
       "base": "gunmetal",
       "accent": "silver",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "brushed gunmetal architecture, precision silver edges, industrial luxury",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "022",
@@ -313,15 +883,45 @@
       "slug": "vortex",
       "base": "black",
       "accent": "ultraviolet",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "black cosmic vortex, ultraviolet energy spiral, deep negative space",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "023",
@@ -329,15 +929,45 @@
       "slug": "monolith",
       "base": "stone-black",
       "accent": "platinum",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "single monumental black stone structure, platinum rim light",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "024",
@@ -345,15 +975,45 @@
       "slug": "nova",
       "base": "space-black",
       "accent": "star-white",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "deep space starfield, controlled white stellar burst, black foreground",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "025",
@@ -361,15 +1021,45 @@
       "slug": "cinder",
       "base": "ash-black",
       "accent": "burnt-orange",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "ash-black landscape, burnt-orange cinders, smoky depth",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "026",
@@ -377,15 +1067,45 @@
       "slug": "polaris",
       "base": "midnight",
       "accent": "polar-blue",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "midnight polar sky, brilliant blue-white north star, restrained star trails",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     },
     {
       "collection": "027",
@@ -393,15 +1113,45 @@
       "slug": "darkwater",
       "base": "abyss-blue",
       "accent": "sea-glow",
-      "status": "AWAITING_UNIQUE_MASTERS",
+      "status": "ART_DIRECTION_LOCKED",
       "required": [
-        "home_1440x3120.png",
-        "lock_1440x3120.png",
-        "icons",
+        "home_1440x3040.png",
+        "lock_1440x3040.png",
+        "messages_1440x3040.png",
+        "dialer_1440x3040.png",
+        "contacts_1440x3040.png",
+        "settings_1440x3040.png",
+        "icons/8-custom-icons",
         "keyboard",
-        "widgets",
-        "store_screenshots"
-      ]
+        "clock_widget",
+        "quick_panel",
+        "notifications",
+        "store_screenshots",
+        "metadata.json"
+      ],
+      "samsung_portfolio": {
+        "canvas": "1440x3040",
+        "screens": [
+          "lock",
+          "home",
+          "messages",
+          "dialer",
+          "contacts",
+          "settings"
+        ],
+        "redesigned_icons": 8
+      },
+      "art_direction": {
+        "motif": "abyssal ocean trench, bioluminescent blue sea glow, no diver",
+        "rules": [
+          "original artwork only",
+          "premium cinematic depth",
+          "no text baked into wallpaper",
+          "no stock imagery",
+          "preserve readable UI negative space",
+          "home and lock must be related but compositionally distinct"
+        ]
+      }
     }
   ]
 }
