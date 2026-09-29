@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "production_master": "OBSIDIAN-002",
+  "policy": "unique complete-theme candidates; no duplicated OBSIDIAN artwork; fail closed when required masters are absent",
+  "themes": [
+    {
+      "collection": "003",
+      "name": "TEMPEST",
+      "slug": "tempest",
+      "base": "storm-black",
+      "accent": "electric-cyan",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "004",
+      "name": "EMBER",
+      "slug": "ember",
+      "base": "charcoal",
+      "accent": "ember-orange",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "005",
+      "name": "ARCTIC",
+      "slug": "arctic",
+      "base": "midnight-navy",
+      "accent": "ice-blue",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "006",
+      "name": "NEON RAIN",
+      "slug": "neon-rain",
+      "base": "black",
+      "accent": "magenta-cyan",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "007",
+      "name": "LUNAR",
+      "slug": "lunar",
+      "base": "graphite",
+      "accent": "moon-silver",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "008",
+      "name": "REDWOOD",
+      "slug": "redwood",
+      "base": "forest-black",
+      "accent": "copper",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "009",
+      "name": "VOID",
+      "slug": "void",
+      "base": "near-black",
+      "accent": "violet",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "010",
+      "name": "MOON TIDE",
+      "slug": "moon-tide",
+      "base": "deep-navy",
+      "accent": "pearl-blue",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "011",
+      "name": "EVENT HORIZON",
+      "slug": "event-horizon",
+      "base": "black",
+      "accent": "solar-gold",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "012",
+      "name": "AEON",
+      "slug": "aeon",
+      "base": "obsidian-blue",
+      "accent": "white",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "013",
+      "name": "CARBON",
+      "slug": "carbon",
+      "base": "carbon-black",
+      "accent": "steel",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "014",
+      "name": "AURORA",
+      "slug": "aurora",
+      "base": "night-blue",
+      "accent": "aurora-green",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "015",
+      "name": "ECLIPSE",
+      "slug": "eclipse",
+      "base": "black",
+      "accent": "corona-gold",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "016",
+      "name": "GLACIER",
+      "slug": "glacier",
+      "base": "slate",
+      "accent": "frost",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "017",
+      "name": "INFERNO",
+      "slug": "inferno",
+      "base": "black",
+      "accent": "red-orange",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "018",
+      "name": "MIDNIGHT",
+      "slug": "midnight",
+      "base": "ink",
+      "accent": "indigo",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "019",
+      "name": "PHANTOM",
+      "slug": "phantom",
+      "base": "graphite",
+      "accent": "ghost-white",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "020",
+      "name": "SOLSTICE",
+      "slug": "solstice",
+      "base": "navy",
+      "accent": "warm-gold",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "021",
+      "name": "TITANIUM",
+      "slug": "titanium",
+      "base": "gunmetal",
+      "accent": "silver",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "022",
+      "name": "VORTEX",
+      "slug": "vortex",
+      "base": "black",
+      "accent": "ultraviolet",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "023",
+      "name": "MONOLITH",
+      "slug": "monolith",
+      "base": "stone-black",
+      "accent": "platinum",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "024",
+      "name": "NOVA",
+      "slug": "nova",
+      "base": "space-black",
+      "accent": "star-white",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "025",
+      "name": "CINDER",
+      "slug": "cinder",
+      "base": "ash-black",
+      "accent": "burnt-orange",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "026",
+      "name": "POLARIS",
+      "slug": "polaris",
+      "base": "midnight",
+      "accent": "polar-blue",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    },
+    {
+      "collection": "027",
+      "name": "DARKWATER",
+      "slug": "darkwater",
+      "base": "abyss-blue",
+      "accent": "sea-glow",
+      "status": "AWAITING_UNIQUE_MASTERS",
+      "required": [
+        "home_1440x3120.png",
+        "lock_1440x3120.png",
+        "icons",
+        "keyboard",
+        "widgets",
+        "store_screenshots"
+      ]
+    }
+  ]
+}
