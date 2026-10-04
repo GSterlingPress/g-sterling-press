@@ -23,22 +23,22 @@ public class MainActivity extends Activity {
   }
   private void install() {
     try {
-      status.setText("INSTALLING OBSIDIAN…"); detail.setText("Applying approved Home + Lock masters.");
+      status.setText("INSTALLING TEMPEST…"); detail.setText("Applying approved Home + Lock masters.");
       WallpaperManager wm=WallpaperManager.getInstance(this);
-      apply(wm,R.drawable.obsidian_002_home,WallpaperManager.FLAG_SYSTEM);
-      apply(wm,R.drawable.obsidian_002_lock,WallpaperManager.FLAG_LOCK);
-      getPreferences(MODE_PRIVATE).edit().putBoolean("obsidian_wallpapers",true).apply();
-      status.setText("OBSIDIAN CORE INSTALLED ✓");
+      apply(wm,R.drawable.tempest_003_home,WallpaperManager.FLAG_SYSTEM);
+      apply(wm,R.drawable.tempest_003_lock,WallpaperManager.FLAG_LOCK);
+      getPreferences(MODE_PRIVATE).edit().putBoolean("tempest_wallpapers",true).apply();
+      status.setText("TEMPEST CORE INSTALLED ✓");
       detail.setText("Artwork is installed. Samsung requires confirmation for protected icon/lock-screen operations.");
       protectedStep.setVisibility(View.VISIBLE); finish.setVisibility(View.VISIBLE);
     } catch(Exception e) {
       status.setText("INSTALLATION NEEDS ATTENTION");
-      detail.setText(e.getMessage()==null?"OBSIDIAN could not be fully applied.":e.getMessage());
+      detail.setText(e.getMessage()==null?"TEMPEST could not be fully applied.":e.getMessage());
     }
   }
   private void apply(WallpaperManager wm,int id,int flag) throws Exception {
     Bitmap source=BitmapFactory.decodeResource(getResources(),id);
-    if(source==null) throw new IllegalStateException("Approved OBSIDIAN artwork is missing.");
+    if(source==null) throw new IllegalStateException("Approved TEMPEST artwork is missing.");
     DisplayMetrics dm=getResources().getDisplayMetrics();
     int targetW=dm.widthPixels, targetH=dm.heightPixels;
     float scale=Math.max((float)targetW/source.getWidth(),(float)targetH/source.getHeight());
