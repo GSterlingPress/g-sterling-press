@@ -1,8 +1,8 @@
-name: Build G Sterling Press OBSIDIAN 002 APK
+name: Build G Sterling Press TEMPEST 003 APK
 
 on:
   push:
-    branches: [theme/obsidian-002]
+    branches: [theme/tempest-003-v2]
   workflow_dispatch:
 
 jobs:
@@ -25,15 +25,15 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> "$GITHUB_PATH"
           yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null || true
           /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0"
-      - name: Verify OBSIDIAN inputs
+      - name: Verify TEMPEST inputs
         shell: bash
         run: |
           set -euo pipefail
-          test -s app/src/main/res/drawable-nodpi/obsidian_002_home.png
-          test -s app/src/main/res/drawable-nodpi/obsidian_002_lock.png
-          grep -q "com.gsterling.press.obsidian002" app/build.gradle
-          grep -q "R.drawable.obsidian_002_home" app/src/main/java/com/gsterling/press/MainActivity.java
-          grep -q "R.drawable.obsidian_002_lock" app/src/main/java/com/gsterling/press/MainActivity.java
+          test -s app/src/main/res/drawable-nodpi/tempest_003_home.png
+          test -s app/src/main/res/drawable-nodpi/tempest_003_lock.png
+          grep -q "com.gsterling.press.tempest003" app/build.gradle
+          grep -q "R.drawable.tempest_003_home" app/src/main/java/com/gsterling/press/MainActivity.java
+          grep -q "R.drawable.tempest_003_lock" app/src/main/java/com/gsterling/press/MainActivity.java
       - name: Real Gradle build
         run: gradle clean assembleDebug --stacktrace
       - name: Validate and name APK
@@ -44,10 +44,10 @@ jobs:
           test -s "$APK"
           /usr/local/lib/android/sdk/build-tools/35.0.0/apksigner verify --verbose "$APK"
           mkdir -p phone-test
-          cp "$APK" phone-test/G_STERLING_PRESS_OBSIDIAN_002.apk
-          sha256sum phone-test/G_STERLING_PRESS_OBSIDIAN_002.apk
+          cp "$APK" phone-test/G_STERLING_PRESS_TEMPEST_003_V2.apk
+          sha256sum phone-test/G_STERLING_PRESS_TEMPEST_003_V2.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: G_STERLING_PRESS_OBSIDIAN_002
-          path: phone-test/G_STERLING_PRESS_OBSIDIAN_002.apk
+          name: G_STERLING_PRESS_TEMPEST_003_V2
+          path: phone-test/G_STERLING_PRESS_TEMPEST_003_V2.apk
           if-no-files-found: error
