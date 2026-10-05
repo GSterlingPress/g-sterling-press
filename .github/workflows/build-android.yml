@@ -25,6 +25,12 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> "$GITHUB_PATH"
           yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null || true
           /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Restore BLACK TIDE artwork
+        shell: bash
+        run: |
+          mkdir -p app/src/main/res/drawable-nodpi
+          python -c "import base64,pathlib; pathlib.Path('app/src/main/res/drawable-nodpi/black_tide_home.jpg').write_bytes(base64.b64decode(pathlib.Path('factory/assets/black_tide_home.b64').read_text()))"
+          python -c "import base64,pathlib; pathlib.Path('app/src/main/res/drawable-nodpi/black_tide_lock.jpg').write_bytes(base64.b64decode(pathlib.Path('factory/assets/black_tide_lock.b64').read_text()))"
       - name: Verify BLACK TIDE inputs
         shell: bash
         run: |
